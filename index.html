@@ -14,5 +14,12 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-  </body>
+    <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/vault-journal-pro/sw.js', { scope: '/vault-journal-pro/' });
+      });
+    }
+  </script>
+</body>
 </html>
